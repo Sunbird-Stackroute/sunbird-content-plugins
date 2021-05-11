@@ -42,8 +42,7 @@
       {
         "type": "css",
         "src": "renderer/style.css"
-      },
-    
+      }, 
       {
         "type": "js",
         "src": "renderer/zoom-1.8.6/react.min.js"
@@ -76,7 +75,7 @@
     
       {
         "type": "js",
-        "src": "renderer/libs/underscore1-min.js"
+        "src": "renderer/zoom-1.8.6/underscore-min.js"
       },
       {
         "type": "js",
