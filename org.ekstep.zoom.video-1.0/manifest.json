@@ -15,11 +15,7 @@
       {
         "type": "css",
         "src": "editor/styles/style.css"
-    },
-    {
-      "type": "js",
-      "src": "editor/zoomService.js"
-    }
+      }
     ],
     "menu": [
       {
