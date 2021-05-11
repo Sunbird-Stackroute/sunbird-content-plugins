@@ -1,0 +1,92 @@
+{
+  "id": "org.ekstep.zoom.video",
+  "ver": "1.0",
+  "author": "Jagadish",
+  "title": "Zoom meeting setup",
+  "description": "Creating meeting and join meeting",
+  "publishedDate": "",
+  "editor": {
+    "main": "editor/plugin.js",
+    "dependencies": [
+      {
+        "type": "js",
+        "src": "editor/zoommeetingCtrl.js"
+      },
+      {
+        "type": "css",
+        "src": "editor/styles/style.css"
+    },
+    {
+      "type": "js",
+      "src": "editor/zoomService.js"
+    }
+    ],
+    "menu": [
+      {
+        "id": "zoom-video",
+        "category": "main",
+        "type": "icon",
+        "toolTip": "Zoom Meeting",
+        "title": "Zoom Meeting",
+        "iconClass": "fa fa-video-camera",
+        "onclick": {
+          "id": "org.ekstep.zoom.video:showPopup"
+        }
+      }
+    ],
+    "configManifest": []
+  },
+  "renderer": {
+    "main": "renderer/plugin.js",
+    "dependencies": [
+      {
+        "type": "css",
+        "src": "renderer/style.css"
+      },
+    
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/react.min.js"
+      },
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/react-dom.min.js"
+      },
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/redux.min.js"
+      },
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/redux-thunk.min.js"
+      },
+        
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/lodash.min.js"
+      },
+      {
+        "type": "css",
+        "src": "renderer/zoom-1.8.6/bootstrap.css"
+      },
+      {
+        "type": "css",
+        "src": "renderer/zoom-1.8.6/react-select.css"
+      },
+    
+      {
+        "type": "js",
+        "src": "renderer/libs/underscore1-min.js"
+      },
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/zoom-meeting-1.8.6.min.js"
+      },
+      {
+        "type": "js",
+        "src": "renderer/zoom-1.8.6/jquery.min.js"
+      }
+    ]
+  },
+  "dependencies": []
+}

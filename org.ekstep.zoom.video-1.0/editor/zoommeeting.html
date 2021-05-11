@@ -1,0 +1,45 @@
+<script type="text/ng-template" id="ZoomMeetingTemplate" ng-controller="ZoomMeetingController">
+  <div class="ui modal small active zoom-modal">
+<div class="header">
+  <div class="ui two column grid">
+    <div class="row">
+      <div class="column">
+      <span><i class="fa fa-video-camera zoom-heading"></i>Zoom Integration</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <form name="createMeetingForm" novalidate ng-submit="fetch()">
+    <div class="createMeeting">
+      <label>Topic</label>
+      <div class="ui fluid action input">
+        <input type="text" class="form-control" placeholder="Topic" name="topic" ng-model="topic" required />
+      </div>
+      <span style="color:red" ng-show="createMeetingForm.topic.$dirty && createMeetingForm.topic.$invalid">
+        <span ng-show="createMeetingForm.topic.$error.required">Topic is required</span>
+      </span>
+      <div class="dateTime">
+        <div class="exampleInput">
+          <label>Start Date</label>
+          <div class="ui fluid action input">
+            <input type="datetime-local" id="exampleInput" name="input" ng-model="startDate" placeholder="startDate"
+              min="2015-01-01T00:00:00" max="2030-12-31T00:00:00" date-field required /><br>
+          </div>
+          <div class="exampleInput">
+            <label>End Date</label>
+            <div class="ui fluid action input">
+              <input type="datetime-local" id="dateInput" name="input" ng-model="endDate" placeholder="EndDate"
+                min="2015-01-01T00:00:00" max="2030-12-31T00:00:00" date-field required />
+            </div>
+            <div class="meeting-btn">
+              <button class="ui blue button" ng-disabled="!createMeetingForm.$dirty">Create Meeting</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+</div>
+</script>
