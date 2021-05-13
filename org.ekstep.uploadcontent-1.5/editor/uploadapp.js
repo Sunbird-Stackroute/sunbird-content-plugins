@@ -1,8 +1,6 @@
 'use strict';
 var fileUploader;
 angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController', ['$scope', '$injector', 'instance', function($scope, $injector, instance) {
-    var plugin = org.ekstep.pluginframework.pluginManager.getPluginManifest("org.ekstep.uploadcontent");
-
     $scope.contentService = ecEditor.getService(ServiceConstants.CONTENT_SERVICE);
     $scope.contentURL = undefined;
     $scope.newContent = false;
@@ -12,8 +10,6 @@ angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController'
     $scope.selectedPrimaryCategory = '';
     $scope.disableDropdown = false;
     $scope.primaryCategoryList = [];
-    $scope.H5PGuidanceDoc = ecEditor.getConfig('absURL') + ecEditor.resolvePluginResource(plugin.id, plugin.ver, 'assets/h5pcontentguidelines.pdf');
-
     $scope.getCategoryList = function(){
         const contextPrimaryCategory = ecEditor.getContext('primaryCategories');
         if(!_.isUndefined(contextPrimaryCategory)){
@@ -334,13 +330,13 @@ angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController'
                     });
                     $scope.showLoader(false);
                 } else {
-                    if (mimeType === 'application/vnd.ekstep.h5p-archive') {
-                        var timeout = Number(ecEditor.getConfig('uploadDelayTimeout'));
-                        setTimeout($scope.handleSuccessfulUpload, timeout || 25000);
-                    } else {
-                        $scope.handleSuccessfulUpload();
-                    }
-                    
+                    ecEditor.dispatchEvent("org.ekstep.toaster:success", {
+                        title: 'content uploaded successfully!',
+                        position: 'topCenter',
+                        icon: 'fa fa-check-circle'
+                    });
+                    ecEditor.dispatchEvent("org.ekstep.genericeditor:reload");
+                    $scope.closeThisDialog();
                 }
             })
         }
@@ -350,17 +346,6 @@ angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController'
             cb($scope.contentURL);
         }
     }
-
-    $scope.handleSuccessfulUpload = function() {
-        ecEditor.dispatchEvent("org.ekstep.toaster:success", {
-            title: 'content uploaded successfully!',
-            position: 'topCenter',
-            icon: 'fa fa-check-circle'
-        });
-        ecEditor.dispatchEvent("org.ekstep.genericeditor:reload");
-        $scope.closeThisDialog();
-    }
-
     $scope.uploadFile = function(mimeType, cb) {
 
         var contentType = mimeType;
