@@ -61,11 +61,11 @@
         "src": "renderer/zoom-1.8.6/lodash.min.js"
       },
       {
-        "type": "css",
+        "type": "js",
         "src": "renderer/zoom-1.8.6/bootstrap.css"
       },
       {
-        "type": "css",
+        "type": "js",
         "src": "renderer/zoom-1.8.6/react-select.css"
       },
     
