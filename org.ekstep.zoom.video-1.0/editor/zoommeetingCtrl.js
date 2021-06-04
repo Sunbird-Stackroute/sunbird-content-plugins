@@ -11,18 +11,13 @@ angular.module('ZoomMeetingApp', [])
     $scope.fetch = function () {
       $scope.response = null;
       $scope.title = $scope.topic;
-      console.log("time", $scope.startDate)
-      console.log("timedate", $scope.endDate)
-      console.log("topic data", $scope.topic);
       $http({ method: $scope.method, url: $scope.url }).
         then(function (response) {
           $scope.data = response.data;
-          // console.log("data", $scope.data)
           $scope.newMeetingDetails = Object.assign($scope.data, { zoomtopic: $scope.topic }
             , { zoomStartDate: $scope.startDate },
             { zoomEndDate: $scope.endDate }
           )
-          console.log("new meeting details", $scope.newMeetingDetails);
           ecEditor.dispatchEvent('org.ekstep.zoom.video:addMeeting', $scope.newMeetingDetails);
           $scope.closeThisDialog();
         }, function (response) {

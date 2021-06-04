@@ -55,11 +55,11 @@ org.ekstep.zoomvideo.EditorPlugin = org.ekstep.contenteditor.basePlugin.extend({
     delete props.height;
     //add media to stage
     // Add stage object
-    var stageImage = ecEditor.resolvePluginResource('org.ekstep.zoom.video', '1.0', 'editor/assets/zoomImage.jpeg');
+    var stageImage = ecEditor.resolvePluginResource('org.ekstep.zoom.video', '1.0', 'editor/assets/zoom_1400x788.png');
     instance.addMedia({
-      id: "ZoomImage",
+      id: "Zoom-Icon",
       src: stageImage,
-      assetId: "ZoomImage",
+      assetId: "Zoom-Icon",
       type: "image",
       preload: true
     });
@@ -80,27 +80,27 @@ org.ekstep.zoomvideo.EditorPlugin = org.ekstep.contenteditor.basePlugin.extend({
   getPropsForEditor: function (title, id, startdate, enddate) {
     /* Display the all properties(title,date,time) on the editor*/
     title = new fabric.Text("Topic:" + title, {
-      fontSize: 25,
-      fill: 'white',
+      fontSize: 30,
+      fill: 'black',
       textAlign: 'center',
       top: 33,
       left: 75
     });
     id = new fabric.Text("Meeting ID:" + id, {
-      fontSize: 20,
-      fill: 'white',
+      fontSize: 28,
+      fill: 'black',
       top: 70,
       left: 90,
     });
     startdate = new fabric.Text("StartDate: " + startdate.toLocaleString(), {
-      fontSize: 20,
-      fill: 'white',
+      fontSize: 28,
+      fill: 'black',
       top: 100,
       left: 90
     });
     enddate = new fabric.Text("EndDate:" + enddate.toLocaleString(), {
-      fontSize: 20,
-      fill: 'white',
+      fontSize: 28,
+      fill: 'black',
       top: 130,
       left: 90,
     },

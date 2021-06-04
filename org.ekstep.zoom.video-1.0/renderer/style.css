@@ -1,14 +1,21 @@
 .container{  
     text-align: center;  
-    border: 7px blue;  
     width: 300px;  
     height: 200px;  
-    padding-top: 100px;  
+    padding-top: 100px;
     }  
     .btn{  
-    font-size: 25px;  
+    font-size: 25px;
+   background-color: #12ade8; 
+    }
+    .button.active, .button.activated {
+      /* border-color: #0f35d4; */
+      background-color: #12ade8;
     } 
 
     #zmmtg-root {
         display: none;
+      }
+       .btn-group > .btn:first-child {
+        background-color: black !important;
       }

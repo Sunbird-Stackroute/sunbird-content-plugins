@@ -7,15 +7,13 @@ org.ekstep.zoomRenderer = Plugin.extend({ // eslint-disable-line no-undef
   _type: 'org.ekstep.zoom.video',
   initPlugin: function (data) {
     var instance = this;
-    console.log('zoom Meeting details', data);
-    var zoomElement = '<div class="container"><button class="ui blue button btn" ng-click="joinMeeting()">Join Meeting</button></div>';
+    var zoomElement = '<link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.9.1/css/bootstrap.css" /><link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.9.1/css/react-select.css" /><script src="https://source.zoom.us/1.8.6/lib/vendor/react.min.js"></script><script src="https://source.zoom.us/1.8.6/lib/vendor/react-dom.min.js"></script><script src="https://source.zoom.us/1.8.6/lib/vendor/redux.min.js"></script><script src="https://source.zoom.us/1.8.6/lib/vendor/redux-thunk.min.js"></script> <script src="https://source.zoom.us/1.8.6/lib/vendor/lodash.min.js"></script>  <script src="https://source.zoom.us/zoom-meeting-1.8.6.min.js"></script><div class="container"><button class="ui blue button btn" ng-click="joinMeeting()">Join Meeting</button></div>';
     $('#gameArea').html(zoomElement);
     setTimeout(function () {
       instance.joinMeeting(data);
-    }, 3000);
+    },4000);
   },
   joinMeeting: function (data) {
-    console.log('zoom Meeting details for join', data);
     if (data != null) {
       var meetingConfig = {
         apiKey: '9ccJuAHyStWc_21278HiDg',
@@ -26,10 +24,7 @@ org.ekstep.zoomRenderer = Plugin.extend({ // eslint-disable-line no-undef
         role: '1',
         userEmail: data.host_email,
       }
-      console.log(meetingConfig);
-
       document.getElementById('zmmtg-root').style.display = 'block'
-      console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
       ZoomMtg.preLoadWasm();
       ZoomMtg.prepareJssdk();
       var signature = ZoomMtg.generateSignature({
@@ -38,14 +33,12 @@ org.ekstep.zoomRenderer = Plugin.extend({ // eslint-disable-line no-undef
         apiSecret: 'LBzJ0VPqk9pmmfUFdhQgrOYlv63GlCqarVp2',
         role: '1',
         success: function (res) {
-          console.log(res.result);
           meetingConfig.signature = res.result;
           meetingConfig.apiKey = '9ccJuAHyStWc_21278HiDg';
         },
       });
 
       this.beginJoin(signature, data);
-      console.log("signature", signature)
     }
   },
 
@@ -53,18 +46,16 @@ org.ekstep.zoomRenderer = Plugin.extend({ // eslint-disable-line no-undef
     ZoomMtg.init({
       leaveUrl: 'http://localhost:3000/app/?contentId=do_112673164776996864179',
       success: function () {
-        console.log("signature", signature);
         ZoomMtg.i18n.load('en-US');
         ZoomMtg.i18n.reload('en-US');
         ZoomMtg.join({
-          meetingNumber: meetingDetails.id,
+          meetingNumber:meetingDetails.id ,
           userName: 'rupa',
           signature: signature,
           apiKey: '9ccJuAHyStWc_21278HiDg',
           userEmail: meetingDetails.host_email,
           passWord: meetingDetails.password,
           success: function (res) {
-            console.log("meeting success result", res)
             ZoomMtg.getAttendeeslist({});
             ZoomMtg.getCurrentUser({
               success: function (res) {

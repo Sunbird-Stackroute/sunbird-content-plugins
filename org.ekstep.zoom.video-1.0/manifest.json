@@ -29,8 +29,7 @@
           "id": "org.ekstep.zoom.video:showPopup"
         }
       }
-    ],
-    "configManifest": []
+    ]  
   },
   "renderer": {
     "main": "renderer/plugin.js",
@@ -38,48 +37,7 @@
       {
         "type": "css",
         "src": "renderer/style.css"
-      }, 
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/react.min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/react-dom.min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/redux.min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/redux-thunk.min.js"
-      },     
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/lodash.min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/bootstrap.css"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/react-select.css"
-      }, 
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/underscore-min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/zoom-meeting-1.8.6.min.js"
-      },
-      {
-        "type": "js",
-        "src": "renderer/zoom-1.8.6/jquery.min.js"
       }
     ]
-  },
-  "dependencies": []
+  }
 }
