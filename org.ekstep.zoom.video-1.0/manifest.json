@@ -15,6 +15,14 @@
       {
         "type": "css",
         "src": "editor/styles/style.css"
+      },
+      {
+        "type": "js",
+        "src": "editor/moment-with-locales.js"
+      },
+      {
+        "type": "js",
+        "src": "editor/moment-timezone-with-data.js"
       }
     ],
     "menu": [
@@ -22,14 +30,14 @@
         "id": "zoom-video",
         "category": "main",
         "type": "icon",
-        "toolTip": "Zoom Meeting",
+        "toolTip": "Create Zoom Meeting",
         "title": "Zoom Meeting",
         "iconClass": "fa fa-video-camera",
         "onclick": {
           "id": "org.ekstep.zoom.video:showPopup"
         }
       }
-    ]  
+    ]
   },
   "renderer": {
     "main": "renderer/plugin.js",
@@ -37,6 +45,10 @@
       {
         "type": "css",
         "src": "renderer/style.css"
+      },
+      {
+        "type": "js",
+        "src": "editor/moment-with-locales.js"
       }
     ]
   }

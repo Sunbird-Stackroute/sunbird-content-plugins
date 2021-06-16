@@ -1,4 +1,4 @@
- 
+
   .modal-content{
    text-align: center;
   }
@@ -22,4 +22,9 @@
 }
 .ui.action.input:not([class*="left action"])>input{
   border-right-color: rgba(34,36,38,.15) !important;
+}
+.ngdialog-close {
+  padding: 10px;
+    margin: 10px;
+    zoom: 1.1;
 }

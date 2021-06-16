@@ -68,45 +68,45 @@ org.ekstep.zoomvideo.EditorPlugin = org.ekstep.contenteditor.basePlugin.extend({
         console.log("zoom new-meeting details", instance)
         var editorData = instance.editorData
         console.log("zoom attributes", editorData)
-        var meetingDetails = instance.getPropsForEditor(editorData.zoomtopic, editorData.id, editorData.zoomStartDate, editorData.zoomEndDate);
+        var meetingDetails = instance.getPropsForEditor(editorData.result.topic, editorData.result.id, editorData.zoomStartDate, editorData.zoomEndDate);
         instance.editorObj = new fabric.Group([img, meetingDetails]);
         instance.parent = _parent;
         instance.editorObj.scaleToWidth(props.w);
         instance.postInit();
       }
     }, props);
-
   },
-  getPropsForEditor: function (title, id, startdate, enddate) {
+  getPropsForEditor: function (topic, id, startdate, enddate) {
     /* Display the all properties(title,date,time) on the editor*/
-    title = new fabric.Text("Topic:" + title, {
-      fontSize: 30,
+    topic = new fabric.Text("Topic:" + topic, {
+      fontSize: 35,
       fill: 'black',
       textAlign: 'center',
-      top: 33,
-      left: 75
+      top: 45,
+      left: 90
     });
     id = new fabric.Text("Meeting ID:" + id, {
-      fontSize: 28,
+      lineHeight: 10,
+      fontSize: 32,
       fill: 'black',
-      top: 70,
+      top: 85,
       left: 90,
     });
     startdate = new fabric.Text("StartDate: " + startdate.toLocaleString(), {
-      fontSize: 28,
+      fontSize: 32,
       fill: 'black',
-      top: 100,
+      top: 125,
       left: 90
     });
     enddate = new fabric.Text("EndDate:" + enddate.toLocaleString(), {
-      fontSize: 28,
+      fontSize: 32,
       fill: 'black',
-      top: 130,
+      top: 160,
       left: 90,
     },
     );
 
-    var fabricGroup = new fabric.Group([title, id, startdate, enddate]);
+    var fabricGroup = new fabric.Group([topic, id, startdate, enddate]);
     return fabricGroup;
   },
   addMeeting: function (event, data) {

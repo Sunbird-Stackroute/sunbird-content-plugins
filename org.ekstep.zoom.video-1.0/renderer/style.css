@@ -4,18 +4,64 @@
     height: 200px;  
     padding-top: 100px;
     }  
-    .btn{  
-    font-size: 25px;
+    .container .btn{  
+    font-size: 17px;
    background-color: #12ade8; 
+   color:#ffff;
+   font-weight: 500;
     }
-    .button.active, .button.activated {
-      /* border-color: #0f35d4; */
+    .container .button.active, .button.activated {
       background-color: #12ade8;
+      color:#ffff;
+    }
+    .container .btn:hover{
+      color: #ffff;
+      border: none;
     } 
-
+    .container .btn:focus{
+      outline:none;
+    }
+    input[type=text] {
+      width: 100%;
+      padding: 21px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #11c1f3;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .container input[type=text]:focus {
+      outline: none !important;
+  }
+    .username::placeholder {
+     color: grey;
+    }
     #zmmtg-root {
         display: none;
       }
-       .btn-group > .btn:first-child {
+
+    .btn-group > .btn:first-child {
         background-color: black !important;
       }
+    /* .joinMtg_btn{
+      margin-top:10px;
+    } */
+  .container label {
+    margin-bottom: 0px !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    display: flex !important;
+  }
+  .username_field{
+    width:100%;
+    position: relative;
+    margin-bottom: 14px;
+    margin-top: -9px;
+  }
+
+  .username_field i{
+    position: absolute;
+    margin-top: 22px;
+    right:11px;
+ 
+  }

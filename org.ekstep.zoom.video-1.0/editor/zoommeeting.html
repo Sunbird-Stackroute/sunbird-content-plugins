@@ -4,7 +4,7 @@
   <div class="ui two column grid">
     <div class="row">
       <div class="column">
-      <span><i class="fa fa-video-camera zoom-heading"></i>Zoom Integration</span>
+      <span><i class="fa fa-video-camera zoom-heading" style="zoom: 1.2;"></i>Create Zoom Meeting</span>
       </div>
     </div>
   </div>
@@ -13,34 +13,36 @@
 <div class="content">
   <form name="createMeetingForm" novalidate ng-submit="fetch()">
     <div class="createMeeting">
-      <label>Topic</label>
+      <label style="margin-bottom: 3px; display: block;">Meeting Name</label>
       <div class="ui fluid action input">
-        <input type="text" class="form-control" placeholder="Topic" name="topic" ng-model="topic" required />
+        <input type="text" class="form-control" placeholder="Enter meeting name" name="topic" ng-model="topic" required />
       </div>
       <span style="color:red" ng-show="createMeetingForm.topic.$dirty && createMeetingForm.topic.$invalid">
-        <span ng-show="createMeetingForm.topic.$error.required">Topic is required</span>
+        <span ng-show="createMeetingForm.topic.$error.required" style="display: block; margin-bottom: -5px;">Topic is required</span>
       </span>
+      <span id="TopicNameCheck" style="display: none; color: red; margin-bottom: -5px;">Topic name cannot be a Number.</span>
       <div class="dateTime">
         <div class="exampleInput">
-          <label>Start Date</label>
+          <label style="margin-bottom: 3px; display: block;">Meeting Start Date</label>
           <div class="ui fluid action input">
-            <input type="datetime-local" id="exampleInput" name="input" ng-model="startDate" placeholder="startDate"
+            <input type="datetime-local" id="exampleInput" name="startdate" ng-model="startDate" placeholder="startDate"
               min="2015-01-01T00:00:00" max="2030-12-31T00:00:00" date-field required /><br>
           </div>
-          <span style="color:red" ng-show="createMeetingForm.topic.$dirty && createMeetingForm.topic.$invalid">
-            <span ng-show="createMeetingForm.topic.$error.required">Date and Time is required</span>
+          <span style="color:red" ng-show="createMeetingForm.startdate.$dirty && createMeetingForm.startdate.$invalid">
+            <span ng-show="createMeetingForm.startdate.$error.required">Date and Time is required</span>
           </span>
           <div class="exampleInput">
-            <label>End Date</label>
+            <label style="margin-bottom: 3px; display: block;">Meeting End Date</label>
             <div class="ui fluid action input">
-              <input type="datetime-local" id="dateInput" name="input" ng-model="endDate" placeholder="EndDate"
+              <input type="datetime-local" id="dateInput" name="enddate" ng-model="endDate" placeholder="EndDate"
                 min="2015-01-01T00:00:00" max="2030-12-31T00:00:00" date-field required />
             </div>
-            <span style="color:red" ng-show="createMeetingForm.topic.$dirty && createMeetingForm.topic.$invalid">
-              <span ng-show="createMeetingForm.topic.$error.required">Date and Time is required</span>
+            <span style="color:red" ng-show="createMeetingForm.enddate.$dirty && createMeetingForm.enddate.$invalid">
+              <span ng-show="createMeetingForm.enddate.$error.required">Date and Time is required</span>
             </span>
+            <span id="InvalidStartDateTemplate" style="display: none; color: red;">Please Select Valid Date & Time.</span>
             <div class="meeting-btn">
-              <button class="ui blue button" ng-disabled="!createMeetingForm.$dirty">Create Meeting</button>
+              <button class="ui blue button" ng-disabled="createMeetingForm.$invalid" style="width: 100%; padding: 15px; margin-top: 6px;">Create New Meeting</button>
             </div>
           </div>
         </div>
