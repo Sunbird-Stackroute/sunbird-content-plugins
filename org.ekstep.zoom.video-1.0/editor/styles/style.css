@@ -1,0 +1,30 @@
+
+  .modal-content{
+   text-align: center;
+  }
+   .zoom-modal {
+    top: 10% !important;
+  }
+  .meeting-btn{
+     margin-top:12px;
+  }
+.exampleInput{
+ margin-top:15px;
+   }
+ .start_enddate{
+  margin-top:15px;
+ }
+.enddate{
+  margin-top:15px;
+}
+.zoom-heading{
+  margin-right:15px;
+}
+.ui.action.input:not([class*="left action"])>input{
+  border-right-color: rgba(34,36,38,.15) !important;
+}
+.ngdialog-close {
+  padding: 10px;
+    margin: 10px;
+    zoom: 1.1;
+}

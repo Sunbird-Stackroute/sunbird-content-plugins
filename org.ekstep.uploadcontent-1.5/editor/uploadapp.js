@@ -1,7 +1,6 @@
 'use strict';
 var fileUploader;
 angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController', ['$scope', '$injector', 'instance', function($scope, $injector, instance) {
-
     $scope.contentService = ecEditor.getService(ServiceConstants.CONTENT_SERVICE);
     $scope.contentURL = undefined;
     $scope.newContent = false;
@@ -11,7 +10,6 @@ angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController'
     $scope.selectedPrimaryCategory = '';
     $scope.disableDropdown = false;
     $scope.primaryCategoryList = [];
-
     $scope.getCategoryList = function(){
         const contextPrimaryCategory = ecEditor.getContext('primaryCategories');
         if(!_.isUndefined(contextPrimaryCategory)){
@@ -348,7 +346,6 @@ angular.module('org.ekstep.uploadcontent-1.5', []).controller('uploadController'
             cb($scope.contentURL);
         }
     }
-
     $scope.uploadFile = function(mimeType, cb) {
 
         var contentType = mimeType;
